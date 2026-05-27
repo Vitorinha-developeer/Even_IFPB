@@ -47,6 +47,7 @@ public class UsuárioController {
     public void deleteUsuariov2(@RequestParam Long id){
 
         if(repositoryusuário.existsById(id)){
+            
             repositoryusuário.deleteById(id);
         }
     }
