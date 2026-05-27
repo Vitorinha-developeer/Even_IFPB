@@ -99,18 +99,6 @@ public class InscriçãoController {
 
             Inscrição inscricaoExistente = repositoryincricao.findById(id).orElseThrow();
 
-            Long idUsuario = inscricaoAtualizada.getUsuario().getId_usuario();
-
-            Long idEvento = inscricaoAtualizada.getEvento().getId_evento();
-
-            Usuário usuario = repositoryUsuario.findById(idUsuario).orElseThrow();
-
-            Evento evento = repositoryEvento.findById(idEvento).orElseThrow();
-
-            inscricaoExistente.setUsuario(usuario);
-
-            inscricaoExistente.setEvento(evento);
-
             inscricaoExistente.setData_inscrição(inscricaoAtualizada.getData_inscrição());
 
             inscricaoExistente.setHorário_inscrição(inscricaoAtualizada.getHorário_inscrição());
