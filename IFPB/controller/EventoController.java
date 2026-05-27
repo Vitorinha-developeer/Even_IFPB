@@ -81,13 +81,6 @@ public class EventoController {
 
             Evento eventoExistente = repositoryevento.findById(id).orElseThrow();
 
-            Long idUsuario = eventoAtualizado.getUsuario().getId_usuario();
-
-            Usuário usuario = repositoryusuario.findById(idUsuario).orElseThrow(() ->
-                    new RuntimeException("Usuário não encontrado"));
-
-            eventoExistente.setUsuario(usuario);
-
             eventoExistente.setTítulo(eventoAtualizado.getTítulo());
 
             eventoExistente.setDescrição(eventoAtualizado.getDescrição());
